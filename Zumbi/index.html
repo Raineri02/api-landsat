@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LST Brasil com MapTiler</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Inicializa o mapa
+    var map = L.map('map').setView([-14.2350, -51.9253], 4);
+
+    // Camada base do MapTiler
+    L.tileLayer('https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=91MpvS9j4DBCiNnJ3XvF', {
+      attribution: '&copy; MapTiler & OpenStreetMap',
+    }).addTo(map);
+
+    // 🔁 Substitua SEU_MAPA_ID abaixo pelo ID do seu mapa no MapTiler Cloud
+    L.tileLayer('https://api.maptiler.com/tiles/SEU_MAPA_ID/{z}/{x}/{y}.png?key=91MpvS9j4DBCiNnJ3XvF', {
+      attribution: '&copy; Temperatura Superficial do Brasil',
+      opacity: 0.6
+    }).addTo(map);
+  </script>
+</body>
+</html>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> 
